@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/middleware.ts","./src/config/db.ts","./src/schemas/contentschema.ts","./src/schemas/linkschema.ts","./src/schemas/tagschema.ts","./src/schemas/userschema.ts"],"version":"5.9.3"}
+{"root":["./src/index.ts","./src/middleware.ts","./src/config/db.ts","./src/routes/authroutes.ts","./src/schemas/contentschema.ts","./src/schemas/linkschema.ts","./src/schemas/tagschema.ts","./src/schemas/userschema.ts","./src/validators/authvalidator.ts"],"version":"5.9.3"}

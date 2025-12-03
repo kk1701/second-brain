@@ -3,6 +3,7 @@ import type { Express, Request, Response } from 'express';
 import { UserModel } from './schemas/UserSchema.js';
 import { connectDB } from './config/db.js';
 import { configDotenv } from 'dotenv';
+import authRouter from './routes/authRoutes.js';
 
 configDotenv();
 
@@ -10,6 +11,9 @@ const app: Express = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+// Auth routes
+app.use("/api/v1/auth", authRouter);
 
 // Initialize database connection
 (async () => {
@@ -24,27 +28,6 @@ app.use(express.json());
         process.exit(1)
     }
 })()
-
-app.post("/api/v1/signup", async (req, res) => {
-    // add zod validation, hash the password, handle 500 and other errors
-
-    const username = req.body.username
-    const password = req.body.password
-
-    await UserModel.create({
-        username: username,
-        password: password
-    })
-
-    res.json({
-        message: "User signed up successfully."
-    })
-})
-
-
-app.post("/api/v1/signin", (req, res) => {
-
-})
 
 
 app.post("/api/v1/content", (req, res) => {
