@@ -4,6 +4,7 @@ import { UserModel } from './schemas/UserSchema.js';
 import { connectDB } from './config/db.js';
 import { configDotenv } from 'dotenv';
 import authRouter from './routes/authRoutes.js';
+import contentRouter from './routes/contentRoutes.js';
 
 configDotenv();
 
@@ -12,8 +13,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Auth routes
 app.use("/api/v1/auth", authRouter);
+app.use('/api/v1/content', contentRouter);
 
 // Initialize database connection
 (async () => {
@@ -30,19 +31,7 @@ app.use("/api/v1/auth", authRouter);
 })()
 
 
-app.post("/api/v1/content", (req, res) => {
 
-})
-
-
-app.get("/api/v1/content", (req, res) => {
-
-})
-
-
-app.delete("/api/v1/content", (req, res) => {
-
-})
 
 
 app.post("/api/v1/brain/share", (req, res) => {
