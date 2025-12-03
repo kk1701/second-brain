@@ -1,10 +1,10 @@
 import express from 'express';
-import type { Express, Request, Response } from 'express';
-import { UserModel } from './schemas/UserSchema.js';
+import type { Express } from 'express';
 import { connectDB } from './config/db.js';
 import { configDotenv } from 'dotenv';
 import authRouter from './routes/authRoutes.js';
 import contentRouter from './routes/contentRoutes.js';
+import brainRouter from './routes/brainRoutes.js';
 
 configDotenv();
 
@@ -15,6 +15,7 @@ app.use(express.json());
 
 app.use("/api/v1/auth", authRouter);
 app.use('/api/v1/content', contentRouter);
+app.use('/api/v1/brain', brainRouter);
 
 // Initialize database connection
 (async () => {
@@ -29,16 +30,3 @@ app.use('/api/v1/content', contentRouter);
         process.exit(1)
     }
 })()
-
-
-
-
-
-app.post("/api/v1/brain/share", (req, res) => {
-
-})
-
-
-app.get("/api/v1/brain/:shareLink", (req, res) => {
-
-})
