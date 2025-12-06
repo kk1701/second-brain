@@ -8,9 +8,9 @@ interface CardProps {
 
 export function Card(props: CardProps) {
   return (
-    <div className="p-4 max-w-72 bg-white rounded-md shadow-md border border-gray-200 min-h-48 min-w-72">
+    <div className="p-4 max-w-72 bg-white rounded-md shadow-md border border-gray-200 min-w-72 max-h-80 overflow-y-hidden">
       {/* top section */}
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <div className="flex items-center text-md">
           <div className="pr-2 text-gray-500">
             <ShareIcon size="md" />
@@ -30,7 +30,7 @@ export function Card(props: CardProps) {
       </div>
 
       {/* video/external embedding */}
-      <div className="pt-4">
+      <div className="pt-4 ">
         {props.type === "youtube" && (
           <iframe
             className="w-full"

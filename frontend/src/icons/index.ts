@@ -1,9 +1,10 @@
 export interface IconProps{
-    size: "sm" | "md" | "lg"
+    size: "sm" | "md" | "lg" | "xlg"
 }
 
 export const iconSizeVariants = {
     "sm": "size-4",
     "md": "size-6",
     "lg": "size-8",
+    "xlg": "size-12",
 }
